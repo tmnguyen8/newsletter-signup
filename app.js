@@ -1,6 +1,7 @@
 const express = require("express");
 const https = require("https");
 const bodyParser = require("body-parser");
+const keys = require("./keys.js");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -33,11 +34,14 @@ app.post("", (req, res) => {
 
     const jsonData = JSON.stringify(data);
 
+    console.log(keys.mailChimpId);
+    console.log(keys.mailChimpKey)
+
     const url = `https://us17.api.mailchimp.com/3.0/lists/9f6dedd93d`;
 
     const options = {
         method: "POST",
-        auth: "tmnguyen8:feb90b1e950e3d59f52e994f654d0fa8-us17"
+        auth: `tmnguyen8:feb90b1e950e3d59f52e994f654d0fa8-us17`
     }
 
     // Making HTTPS REQUEST
