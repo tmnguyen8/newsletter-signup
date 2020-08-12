@@ -41,7 +41,7 @@ app.post("", (req, res) => {
 
     const options = {
         method: "POST",
-        auth: `tmnguyen8${keys.mailChimpKey}`
+        auth: `abc:${keys.mailChimpKey}`
     }
 
     // Making HTTPS REQUEST
