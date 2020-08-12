@@ -37,11 +37,11 @@ app.post("", (req, res) => {
     console.log(keys.mailChimpId);
     console.log(keys.mailChimpKey)
 
-    const url = `https://us17.api.mailchimp.com/3.0/lists/9f6dedd93d`;
+    const url = `https://us17.api.mailchimp.com/3.0/lists/${keys.mailChimpId}`;
 
     const options = {
         method: "POST",
-        auth: `tmnguyen8:feb90b1e950e3d59f52e994f654d0fa8-us17`
+        auth: `tmnguyen8${keys.mailChimpKey}`
     }
 
     // Making HTTPS REQUEST
@@ -66,8 +66,3 @@ app.post("/failure", (req, res) => {
 })
 
 app.listen( port, ()=> console.log(`Server is running on port ${port}.`));
-
-// API MAILCHIMP KEY
-// feb90b1e950e3d59f52e994f654d0fa8-us17
-// MAILCHIMP ID
-// 9f6dedd93d
